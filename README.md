@@ -11,10 +11,15 @@ Anyway, I think this work will be very useful for me: I assume understanding wor
 - add a log for good or bad work;
 - add a log for search history;
 - do some refactoring;
-- realize search not only on one page;
-- do foolproofs etc.
+- realize search not only on one page.
 
 ## Current versions:
+
+### 12.09.2020:
+Add:
+- information about good or bad results of the search;
+- foolproofs for input tag;
+- fixed the issue related to len of the input tag on windows.
 
 ### 11.09.2020:
 Web-application can:
