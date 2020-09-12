@@ -14,5 +14,6 @@ func GetTag() string {
 	fmt.Println("Enter Sports.ru news tag (in Russian):")
 	sportsTag, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	errorpack.ErrorErr(err)
-	return strings.TrimRight(sportsTag, "\n")
+	fmt.Println([]rune(sportsTag))
+	return strings.TrimRight(sportsTag, "\r\n")
 }
