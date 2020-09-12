@@ -12,6 +12,7 @@ import (
 
 //ParsingSports parses html and write data to the standart output
 func ParsingSports(landURL, sportsTag string) {
+	accessFlag := false
 
 	getSite, err := http.Get(landURL) //Request to the site
 	errorpack.ErrorErr(err)
@@ -49,10 +50,15 @@ func ParsingSports(landURL, sportsTag string) {
 					errorpack.ErrorBool(errBool)
 
 					if strings.ToLower(tag) == strings.ToLower(sportsTag) { //Single tag image
+						accessFlag = true
 						fmt.Printf("Date: %s %s\n%s: %s\n-----\n", date, time, title, fullURL)
 					}
 				})
 			})
 		})
 	})
+	fmt.Println("Search finished")
+	if accessFlag == true {
+		fmt.Println("Invalid tag. Please restart the application...")
+	}
 }

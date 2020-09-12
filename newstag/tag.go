@@ -17,10 +17,11 @@ func GetTag() string {
 	fmt.Println("Enter Sports.ru news tag (in Russian):")
 	sportsTag, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	errorpack.ErrorErr(err)
+	sportsTag = strings.TrimRight(sportsTag, "\r\n")
 
 	TagCheck(sportsTag)
 
-	return strings.TrimRight(sportsTag, "\r\n")
+	return sportsTag
 }
 
 //TagCheck verifies language of the input tag
