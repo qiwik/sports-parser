@@ -5,14 +5,19 @@ import (
 	"fmt"
 	"github/sports-parser/errorpack"
 	"net/http"
+	"os"
 	"strings"
+	"time"
 
 	"github.com/PuerkitoBio/goquery"
 )
 
 //ParsingSports parses html and write data to the standart output
-func ParsingSports(landURL, sportsTag string) {
-	accessFlag := false
+func ParsingSports(landURL, sportsTag string, historyFile *os.File) {
+	accessFlag := false //Verifies that there is information related to tag
+
+	historyFile.WriteString("Current tag: " + sportsTag + "\n\n")
+	currentDate := time.Now().Format("01-02-2006 15:04:05")
 
 	getSite, err := http.Get(landURL) //Request to the site
 	errorpack.ErrorErr(err)
@@ -51,14 +56,21 @@ func ParsingSports(landURL, sportsTag string) {
 
 					if strings.ToLower(tag) == strings.ToLower(sportsTag) { //Single tag image
 						accessFlag = true
-						fmt.Printf("Date: %s %s\n%s: %s\n-----\n", date, time, title, fullURL)
+
+						historyFile.WriteString("Time of the request: " + currentDate + "\n")
+						historyFile.WriteString("News:" + title + "\n")
+						historyFile.WriteString(date + time + " Link:" + fullURL + "\n")
+						historyFile.WriteString("-----" + "\n")
+
+						fmt.Printf("Time of the request:%s\nNews:%s\n%s %s Link:%s\n-----\n", currentDate, title, date, time, fullURL)
 					}
 				})
 			})
 		})
 	})
-	fmt.Println("Search finished")
-	if accessFlag == true {
-		fmt.Println("Invalid tag. Please restart the application...")
+	historyFile.WriteString("\n***\n")
+	fmt.Println("Search finished. Press enter to quit.")
+	if accessFlag == false {
+		fmt.Println("The tag hasn't news related to it. Please, restart the application.") //Information related to tag doesn't exist
 	}
 }

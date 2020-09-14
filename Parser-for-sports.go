@@ -1,8 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"github/sports-parser/newstag"
-	"github/sports-parser/parsingsite"
+	"github/sports-parser/outerfiles"
 )
 
 const (
@@ -11,5 +12,11 @@ const (
 
 func main() {
 	inputTag := newstag.GetTag()
-	parsingsite.ParsingSports(landURL, inputTag)
+	fileExist := outerfiles.Revision()
+	if fileExist == true {
+		outerfiles.OpenHistory(landURL, inputTag)
+	} else {
+		outerfiles.CreateHistory(landURL, inputTag)
+	}
+	fmt.Scanln()
 }
