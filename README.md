@@ -17,7 +17,8 @@ Anyway, I think this work will be very useful for me: I assume understanding wor
 
 ### 24.09.2020:
 Add:
-- log.txt.
+- log.txt;
+- code improvements.
 
 ### 14.09.2020:
 Add:
