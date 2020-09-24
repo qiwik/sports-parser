@@ -11,12 +11,10 @@ const (
 )
 
 func main() {
-	inputTag := newstag.GetTag()
-	fileExist := outerfiles.Revision()
-	if fileExist == true {
-		outerfiles.OpenHistory(landURL, inputTag)
-	} else {
-		outerfiles.CreateHistory(landURL, inputTag)
-	}
+	logFile := outerfiles.LogInit()
+	inputTag := newstag.GetTag(logFile)
+	outerfiles.OpenHistory(landURL, inputTag, logFile)
+	logFile.WriteString("File closed correctly.\n--------\n")
+	logFile.Close()
 	fmt.Scanln()
 }

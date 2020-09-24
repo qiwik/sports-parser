@@ -13,38 +13,38 @@ import (
 )
 
 //ParsingSports parses html and write data to the standart output
-func ParsingSports(landURL, sportsTag string, historyFile *os.File) {
+func ParsingSports(landURL, sportsTag string, historyFile, logFile *os.File) {
 	accessFlag := false //Verifies that there is information related to tag
+	var numberOfNews int
 
 	historyFile.WriteString("Current tag: " + sportsTag + "\n\n")
-	currentDate := time.Now().Format("01-02-2006 15:04:05")
 
 	getSite, err := http.Get(landURL) //Request to the site
-	errorpack.ErrorErr(err)
+	errorpack.ErrorErr(err, logFile)
 
 	topnews, err := goquery.NewDocumentFromReader(getSite.Body) //Read html of the main page
-	errorpack.ErrorErr(err)
+	errorpack.ErrorErr(err, logFile)
 
 	topnews.Find(".short-news").Each(func(_ int, shortNews *goquery.Selection) { //Parsing of the big list of the news
 
-		date := shortNews.Find("b").Text()          //Date of the news
-		time, err := shortNews.Find(".time").Html() //News release time
-		errorpack.ErrorErr(err)
+		date := shortNews.Find("b").Text()           //Date of the news
+		times, err := shortNews.Find(".time").Html() //News release time
+		errorpack.ErrorErr(err, logFile)
 
 		shortNews.Find(".short-text").Each(func(_ int, shortText *goquery.Selection) { //Parsing of the short news step by step
 
 			newsURL, errBool := shortText.Attr("href") //URL of each news
-			errorpack.ErrorBool(errBool)
+			errorpack.ErrorBool(errBool, logFile)
 			if string(newsURL[0]) != "/" { //Incorrect link check
 				return
 			}
 
 			fullURL := "https://www.sports.ru" + newsURL
 			getNews, err := http.Get(fullURL) //Request to the news page
-			errorpack.ErrorErr(err)
+			errorpack.ErrorErr(err, logFile)
 
 			news, err := goquery.NewDocumentFromReader(getNews.Body) //Read html of the separate news page
-			errorpack.ErrorErr(err)
+			errorpack.ErrorErr(err, logFile)
 
 			title := news.Find(".h1_size_tiny").Text() //News title
 
@@ -52,25 +52,33 @@ func ParsingSports(landURL, sportsTag string, historyFile *os.File) {
 				tagItems.Find(".link_size_small").Each(func(_ int, tagItem *goquery.Selection) { //Parsing of the tags step by step
 
 					tag, errBool := tagItem.Attr("title") //Tag from site
-					errorpack.ErrorBool(errBool)
+					errorpack.ErrorBool(errBool, logFile)
 
 					if strings.ToLower(tag) == strings.ToLower(sportsTag) { //Single tag image
 						accessFlag = true
 
+						currentDate := time.Now().Format("01-02-2006 15:04:05")
+
 						historyFile.WriteString("Time of the request: " + currentDate + "\n")
 						historyFile.WriteString("News:" + title + "\n")
-						historyFile.WriteString(date + time + " Link:" + fullURL + "\n")
+						historyFile.WriteString(date + times + " Link:" + fullURL + "\n")
 						historyFile.WriteString("-----" + "\n")
+						numberOfNews++
 
-						fmt.Printf("Time of the request:%s\nNews:%s\n%s %s Link:%s\n-----\n", currentDate, title, date, time, fullURL)
+						logFile.WriteString("Successful reading.\n")
+
+						fmt.Printf("Time of the request:%s\nNews:%s\n%s %s Link:%s\n-----\n", currentDate, title, date, times, fullURL)
 					}
 				})
 			})
 		})
 	})
 	historyFile.WriteString("\n***\n")
+	fmt.Printf("Total news: %d\n", numberOfNews)
 	fmt.Println("Search finished. Press enter to quit.")
+	logFile.WriteString("Search finished " + time.Now().Format("01-02-2006 15:04:05") + "\n")
 	if accessFlag == false {
 		fmt.Println("The tag hasn't news related to it. Please, restart the application.") //Information related to tag doesn't exist
+		logFile.WriteString("Incorrect tag.\n")
 	}
 }

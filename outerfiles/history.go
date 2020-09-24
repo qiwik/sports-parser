@@ -8,17 +8,10 @@ import (
 )
 
 //OpenHistory opens history.txt
-func OpenHistory(landURL, sportsTag string) {
-	historyFile, err := os.OpenFile("history.txt", os.O_APPEND|os.O_WRONLY, 0600)
-	errorpack.ErrorErr(err)
+func OpenHistory(landURL, sportsTag string, logFile *os.File) {
+	historyFile, err := os.OpenFile("history.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
+	errorpack.ErrorErr(err, logFile)
+	logFile.WriteString("History opened. Parsing is starting...\n")
 	defer historyFile.Close()
-	parsingsite.ParsingSports(landURL, sportsTag, historyFile)
-}
-
-//CreateHistory create new history.txt if file doesn't exist in the root
-func CreateHistory(landURL, sportsTag string) {
-	historyFile, err := os.Create("history.txt")
-	errorpack.ErrorErr(err)
-	defer historyFile.Close()
-	parsingsite.ParsingSports(landURL, sportsTag, historyFile)
+	parsingsite.ParsingSports(landURL, sportsTag, historyFile, logFile)
 }

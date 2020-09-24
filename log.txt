@@ -1,0 +1,85 @@
+Start application: 09-24-2020 12:08:37
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Search finished 09-24-2020 12:09:51
+File closed correctly.
+--------
+Start application: 09-24-2020 12:10:37
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Search finished 09-24-2020 12:11:52
+File closed correctly.
+--------
+Start application: 09-24-2020 12:12:23
+Error with the application - 09-24-2020 12:12:47Start application: 09-24-2020 12:13:22
+History opened. Parsing is starting...
+Search finished 09-24-2020 12:14:37
+Incorrect tag.
+File closed correctly.
+--------
