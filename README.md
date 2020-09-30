@@ -15,6 +15,11 @@ Anyway, I think this work will be very useful for me: I assume understanding wor
 
 ## Current versions:
 
+### 24.09.2020:
+Add:
+- log.txt;
+- code improvements.
+
 ### 14.09.2020:
 Add:
 - history.txt that saves search history;
