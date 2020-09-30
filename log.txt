@@ -83,3 +83,293 @@ Search finished 09-24-2020 12:14:37
 Incorrect tag.
 File closed correctly.
 --------
+Start application: 09-25-2020 20:41:59
+Invalid tag: not in Russian - 09-25-2020 20:42:07Start application: 09-25-2020 20:42:34
+Invalid tag: not in Russian - 09-25-2020 20:42:36
+------
+Start application: 09-25-2020 20:53:38
+Invalid tag: not in Russian - 09-25-2020 20:53:40
+------
+Start application: 09-25-2020 20:53:59
+History opened. Parsing is starting...
+Search finished 09-25-2020 20:55:15
+Incorrect tag.
+File closed correctly.
+--------
+Start application: 09-28-2020 21:14:03
+Start application: 09-28-2020 21:33:35
+Start application: 09-28-2020 21:34:11
+Start application: 09-28-2020 21:34:30
+Invalid tag: not in Russian - 09-28-2020 21:34:35
+------
+Start application: 09-28-2020 21:35:25
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Start application: 09-28-2020 21:35:44
+Invalid tag: not in Russian - 09-28-2020 21:35:48
+------
+Start application: 09-28-2020 21:37:10
+Invalid tag: not in Russian - 09-28-2020 21:37:14
+------
+Start application: 09-28-2020 21:37:54
+Invalid tag: not in Russian - 09-28-2020 21:38:00
+------
+Start application: 09-28-2020 21:40:25
+Invalid tag: not in Russian - 09-28-2020 21:40:28
+------
+Start application: 09-28-2020 21:40:43
+Invalid tag: not in Russian - 09-28-2020 21:40:46
+------
+Start application: 09-28-2020 21:42:17
+Invalid tag: not in Russian - 09-28-2020 21:42:25
+------
+Start application: 09-28-2020 21:42:46
+Invalid tag: not in Russian - 09-28-2020 21:42:49
+------
+Start application: 09-28-2020 21:44:47
+Invalid tag: not in Russian - 09-28-2020 21:44:53
+------
+Start application: 09-28-2020 21:45:32
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Start application: 09-28-2020 21:46:34
+History opened. Parsing is starting...
+Successful reading.
+Start application: 09-28-2020 21:47:20
+History opened. Parsing is starting...
+Successful reading.
+Start application: 09-28-2020 21:48:08
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Start application: 09-28-2020 21:48:39
+History opened. Parsing is starting...
+Start application: 09-28-2020 21:50:53
+Invalid tag: not in Russian - 09-28-2020 21:50:58
+------
+Start application: 09-28-2020 21:51:11
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Start application: 09-28-2020 21:52:21
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Start application: 09-28-2020 21:52:47
+History opened. Parsing is starting...
+Start application: 09-28-2020 21:55:05
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Search finished 09-28-2020 21:56:27
+File closed correctly.
+--------
+Start application: 09-28-2020 21:59:35
+History opened. Parsing is starting...
+Start application: 09-28-2020 22:00:32
+History opened. Parsing is starting...
+Start application: 09-28-2020 22:00:50
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:45:52
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:46:37
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:47:23
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:48:13
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:49:52
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:50:41
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:51:14
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:52:05
+Start application: 09-29-2020 21:52:21
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:53:17
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:53:47
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:54:42
+History opened. Parsing is starting...
+Start application: 09-29-2020 21:58:26
+Invalid tag: not in Russian - 09-29-2020 21:58:31
+------
+Start application: 09-29-2020 21:58:56
+Invalid tag: not in Russian - 09-29-2020 21:59:02
+------
+Start application: 09-29-2020 22:00:10
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:01:38
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:02:35
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:03:02
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:06:06
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:06:38
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:08:40
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:08:57
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:10:11
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:10:33
+Invalid tag: not in Russian - 09-29-2020 22:10:39
+------
+Start application: 09-29-2020 22:11:40
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:12:21
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:18:19
+Invalid tag: not in Russian - 09-29-2020 22:18:25
+------
+Start application: 09-29-2020 22:18:49
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:19:41
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:20:12
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:20:56
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:22:06
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:23:46
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:24:29
+History opened. Parsing is starting...
+Successful reading.
+Start application: 09-29-2020 22:25:57
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:26:42
+Invalid tag: not in Russian - 09-29-2020 22:26:51
+------
+Start application: 09-29-2020 22:28:14
+History opened. Parsing is starting...
+Start application: 09-29-2020 22:30:47
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Start application: 09-29-2020 22:31:25
+History opened. Parsing is starting...
+Successful reading.
+Start application: 09-29-2020 22:37:03
+History opened. Parsing is starting...
+Successful reading.
+Start application: 09-29-2020 22:38:46
+Invalid tag: not in Russian or more than one space after comma - 09-29-2020 22:38:49
+------
+Start application: 09-29-2020 22:38:59
+Invalid tag: not in Russian or more than one space after comma - 09-29-2020 22:39:04
+------
+Start application: 09-29-2020 22:39:07
+Start application: 09-29-2020 22:40:11
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Start application: 09-29-2020 22:41:24
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Start application: 09-29-2020 22:41:52
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Successful reading.
+Start application: 09-29-2020 22:42:14
+History opened. Parsing is starting...
+Successful reading.
+Successful reading.
+Successful reading.

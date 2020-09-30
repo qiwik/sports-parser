@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github/sports-parser/logger"
 	"github/sports-parser/newstag"
 	"github/sports-parser/outerfiles"
 )
@@ -11,7 +12,7 @@ const (
 )
 
 func main() {
-	logFile := outerfiles.LogInit()
+	logFile := logger.LogInit()
 	inputTag := newstag.GetTag(logFile)
 	outerfiles.OpenHistory(landURL, inputTag, logFile)
 	logFile.WriteString("File closed correctly.\n--------\n")
