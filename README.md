@@ -15,6 +15,12 @@ Anyway, I think this work will be very useful for me: I assume understanding wor
 
 ## Current versions:
 
+### 30.09.2020:
+Add:
+- search with more than 1 tag in input;
+- delete errorpack;
+- improve writing to log.
+
 ### 24.09.2020:
 Add:
 - log.txt;
