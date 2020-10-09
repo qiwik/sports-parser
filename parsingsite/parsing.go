@@ -3,10 +3,10 @@ package parsingsite
 
 import (
 	"fmt"
-	"github/sports-parser/logger"
 	"log"
 	"net/http"
 	"os"
+	"sports-parser/logger"
 	"strings"
 	"time"
 

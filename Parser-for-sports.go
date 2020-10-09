@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github/sports-parser/logger"
-	"github/sports-parser/newstag"
-	"github/sports-parser/outerfiles"
+	"sports-parser/logger"
+	"sports-parser/newstag"
+	"sports-parser/outerfiles"
 )
 
 const (

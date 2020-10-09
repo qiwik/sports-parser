@@ -5,9 +5,9 @@ package newstag
 import (
 	"bufio"
 	"fmt"
-	"github/sports-parser/logger"
 	"log"
 	"os"
+	"sports-parser/logger"
 	"strings"
 	"time"
 	"unicode"

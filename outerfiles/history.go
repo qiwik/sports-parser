@@ -2,10 +2,10 @@
 package outerfiles
 
 import (
-	"github/sports-parser/logger"
-	"github/sports-parser/parsingsite"
 	"log"
 	"os"
+	"sports-parser/logger"
+	"sports-parser/parsingsite"
 )
 
 //OpenHistory opens history.txt
