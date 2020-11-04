@@ -7,13 +7,16 @@ Anyway, I think this work will be very useful for me: I assume understanding wor
 
 
 ## Future improvements:
-- add search for several tags;
-- add a log for good or bad work;
 - add a log for search history;
 - do some refactoring;
 - realize search not only on one page.
 
 ## Current versions:
+
+### 04.11.2020:
+Add:
+- error handler.
+Done with some refactoring.
 
 ### 30.09.2020:
 Add:
