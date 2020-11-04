@@ -2,19 +2,18 @@
 package outerfiles
 
 import (
-	"log"
 	"os"
-	"sports-parser/logger"
+	"sports-parser/errorpack"
 	"sports-parser/parsingsite"
 )
 
 //OpenHistory opens history.txt
 func OpenHistory(landURL string, sportsTag []string, logFile *os.File) {
+	var err interface{}
 	historyFile, err := os.OpenFile("history.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
 	if err != nil {
-		err := "Error: history.txt can not be created or opened"
-		logger.LogErrorClose(logFile, err)
-		log.Fatal(err)
+		num := 3
+		errorpack.ErrorHandler(logFile, err, num)
 	}
 	logFile.WriteString("History opened. Parsing is starting...\n")
 	defer historyFile.Close()

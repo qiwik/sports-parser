@@ -16,10 +16,3 @@ func LogInit() *os.File {
 	logFile.WriteString("Start application: " + currentTime + "\n")
 	return logFile
 }
-
-//LogErrorClose closes a log file while an error exists
-func LogErrorClose(logFile *os.File, err string) {
-	currentTime := time.Now().Format("01-02-2006 15:04:05")
-	logFile.WriteString(err + " " + currentTime + "\n------\n")
-	logFile.Close()
-}

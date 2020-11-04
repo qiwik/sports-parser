@@ -5,32 +5,30 @@ package newstag
 import (
 	"bufio"
 	"fmt"
-	"log"
 	"os"
-	"sports-parser/logger"
+	"sports-parser/errorpack"
 	"strings"
-	"time"
 	"unicode"
 )
 
 //GetTag reads tag from standart input and returns it
 func GetTag(logFile *os.File) []string {
+	var err interface{}
 	fmt.Println("Enter Sports.ru news tag (in Russian) separated by commas:")
 	sportsTag, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	if err != nil {
-		err := "Error: reading from the input can not be performed"
-		logger.LogErrorClose(logFile, err)
-		log.Fatal(err)
+		num := 5
+		errorpack.ErrorHandler(logFile, err, num)
 	}
 	arrayOfTags := strings.Split(sportsTag, ",")
 
-	TagCheck(arrayOfTags, logFile)
+	tagCheck(arrayOfTags, logFile)
 
 	return arrayOfTags
 }
 
 //TagCheck verifies language of the input tag
-func TagCheck(arrayOfTags []string, logFile *os.File) {
+func tagCheck(arrayOfTags []string, logFile *os.File) {
 	var checkInput [][]rune
 	for i := range arrayOfTags {
 		if arrayOfTags[i][0] == 32 {
@@ -44,10 +42,9 @@ func TagCheck(arrayOfTags []string, logFile *os.File) {
 	for j := range checkInput {
 		for k := range checkInput[j] {
 			if unicode.Is(unicode.Cyrillic, checkInput[j][k]) != true && checkInput[j][k] != 32 {
-				currentTime := time.Now().Format("01-02-2006 15:04:05")
-				logFile.WriteString("Invalid tag: not in Russian or more than one space after comma - " + currentTime + "\n------\n")
-				logFile.Close()
-				log.Fatal("Error: tag not in Russian or more than one space after comma")
+				var err interface{} = "error"
+				num := 4
+				errorpack.ErrorHandler(logFile, err, num)
 			}
 		}
 	}
