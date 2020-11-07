@@ -13,6 +13,9 @@ Anyway, I think this work will be very useful for me: I assume understanding wor
 
 ## Current versions:
 
+### 07.11.2020:
+Revised logging. The app needs refactoring.
+
 ### 04.11.2020:
 Add:
 - error handler.

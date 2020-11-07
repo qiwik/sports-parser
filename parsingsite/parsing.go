@@ -3,6 +3,7 @@ package parsingsite
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"sports-parser/errorpack"
@@ -13,7 +14,7 @@ import (
 )
 
 //ParsingSports parses html and write data to the standart output
-func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.File) {
+func ParsingSports(landURL string, sportsTag []string, historyFile *os.File, logFile *log.Logger, file *os.File) {
 	var err interface{}
 
 	accessFlag := false //Verifies that there is information related to tag
@@ -24,7 +25,7 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 	} else {
 		historyFile.WriteString("Current tags: ")
 		for i := range sportsTag {
-			historyFile.WriteString(sportsTag[i])
+			historyFile.WriteString(sportsTag[i] + " ")
 		}
 		historyFile.WriteString("\n\n")
 	}
@@ -32,13 +33,13 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 	getSite, err := http.Get(landURL) //Request to the site
 	if err != nil {
 		num := 1
-		errorpack.ErrorHandler(logFile, err, num)
+		errorpack.ErrorHandler(logFile, err, num, file)
 	}
 
 	topnews, err := goquery.NewDocumentFromReader(getSite.Body) //Read html of the main page
 	if err != nil {
 		num := 2
-		errorpack.ErrorHandler(logFile, err, num)
+		errorpack.ErrorHandler(logFile, err, num, file)
 	}
 
 	topnews.Find(".short-news").Each(func(_ int, shortNews *goquery.Selection) { //Parsing of the big list of the news
@@ -48,7 +49,7 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 		times, err := shortNews.Find(".time").Html() //News release time
 		if err != nil {
 			num := 2
-			errorpack.ErrorHandler(logFile, err, num)
+			errorpack.ErrorHandler(logFile, err, num, file)
 		}
 
 		shortNews.Find(".short-text").Each(func(_ int, shortText *goquery.Selection) { //Parsing of the short news step by step
@@ -57,7 +58,7 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 			newsURL, err := shortText.Attr("href") //URL of each news
 			if err != true {
 				num := 2
-				errorpack.ErrorHandler(logFile, err, num)
+				errorpack.ErrorHandler(logFile, err, num, file)
 			}
 			if string(newsURL[0]) != "/" { //Incorrect link check
 				return
@@ -67,13 +68,13 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 			getNews, err := http.Get(fullURL) //Request to the news page
 			if err != nil {
 				num := 2
-				errorpack.ErrorHandler(logFile, err, num)
+				errorpack.ErrorHandler(logFile, err, num, file)
 			}
 
 			news, err := goquery.NewDocumentFromReader(getNews.Body) //Read html of the separate news page
 			if err != nil {
 				num := 2
-				errorpack.ErrorHandler(logFile, err, num)
+				errorpack.ErrorHandler(logFile, err, num, file)
 			}
 
 			title := news.Find(".h1_size_tiny").Text() //News title
@@ -88,7 +89,7 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 					arrayOfTags = append(arrayOfTags, tag)
 					if err != true {
 						num := 2
-						errorpack.ErrorHandler(logFile, err, num)
+						errorpack.ErrorHandler(logFile, err, num, file)
 					}
 				})
 
@@ -113,7 +114,7 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 					historyFile.WriteString("-----" + "\n")
 					numberOfNews++
 
-					logFile.WriteString("Successful reading.\n")
+					logFile.Println("Successful reading.")
 
 					fmt.Printf("Time of the request: %s\nNews:%s\n%s%s Link: %s\n-----\n", currentDate, title, date, times, fullURL)
 				}
@@ -123,9 +124,9 @@ func ParsingSports(landURL string, sportsTag []string, historyFile, logFile *os.
 	historyFile.WriteString("\n***\n")
 	fmt.Printf("Total news: %d\n", numberOfNews)
 	fmt.Println("Search finished. Press enter to quit.")
-	logFile.WriteString("Search finished " + time.Now().Format("01-02-2006 15:04:05") + "\n")
+	logFile.Println("Search finished")
 	if accessFlag == false {
 		fmt.Println("The tag hasn't news related to it. Please, restart the application.") //Information related to tag doesn't exist
-		logFile.WriteString("Incorrect tag.\n")
+		logFile.Println("Incorrect tag.")
 	}
 }

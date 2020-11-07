@@ -3,7 +3,6 @@ package errorpack
 import (
 	"log"
 	"os"
-	"time"
 )
 
 type errorList struct {
@@ -16,17 +15,15 @@ type errBool struct{}
 
 type otherErr struct{}
 
-func (e *errBool) typeHandler(logFile *os.File, err interface{}, listOfErrors errorList) {
-	currentTime := time.Now().Format("01-02-2006 15:04:05")
-	logFile.WriteString(listOfErrors.errBool + " " + currentTime + "\n------\n")
-	logFile.Close()
+func (e *errBool) typeHandler(logFile *log.Logger, err interface{}, listOfErrors errorList, file *os.File) {
+	logFile.Println(listOfErrors.errBool)
+	file.Close()
 	log.Fatal(listOfErrors.errBool)
 }
 
-func (o *otherErr) typeHandler(logFile *os.File, err interface{}, num int, listOfErrors errorList) {
-	currentTime := time.Now().Format("01-02-2006 15:04:05")
-	logFile.WriteString(listOfErrors.errErr[num] + " " + currentTime + "\n------\n")
-	logFile.Close()
+func (o *otherErr) typeHandler(logFile *log.Logger, err interface{}, num int, listOfErrors errorList, file *os.File) {
+	logFile.Println(listOfErrors.errErr[num])
+	file.Close()
 	log.Fatal(listOfErrors.errErr[num])
 }
 
@@ -34,7 +31,8 @@ type funcTypes interface {
 	typeHandler()
 }
 
-func ErrorHandler(logFile *os.File, err interface{}, num int) {
+//ErrorHandler ...
+func ErrorHandler(logFile *log.Logger, err interface{}, num int, file *os.File) {
 	listOfErrors := errorsCreating()
 
 	e := &errBool{}
@@ -42,9 +40,9 @@ func ErrorHandler(logFile *os.File, err interface{}, num int) {
 
 	switch err.(type) {
 	case bool:
-		e.typeHandler(logFile, err, listOfErrors)
+		e.typeHandler(logFile, err, listOfErrors, file)
 	default:
-		o.typeHandler(logFile, err, num, listOfErrors)
+		o.typeHandler(logFile, err, num, listOfErrors, file)
 	}
 }
 

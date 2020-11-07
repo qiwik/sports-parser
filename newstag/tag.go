@@ -5,6 +5,7 @@ package newstag
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"sports-parser/errorpack"
 	"strings"
@@ -12,23 +13,23 @@ import (
 )
 
 //GetTag reads tag from standart input and returns it
-func GetTag(logFile *os.File) []string {
+func GetTag(logFile *log.Logger, file *os.File) []string {
 	var err interface{}
 	fmt.Println("Enter Sports.ru news tag (in Russian) separated by commas:")
 	sportsTag, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	if err != nil {
 		num := 5
-		errorpack.ErrorHandler(logFile, err, num)
+		errorpack.ErrorHandler(logFile, err, num, file)
 	}
 	arrayOfTags := strings.Split(sportsTag, ",")
 
-	tagCheck(arrayOfTags, logFile)
+	tagCheck(arrayOfTags, logFile, file)
 
 	return arrayOfTags
 }
 
 //TagCheck verifies language of the input tag
-func tagCheck(arrayOfTags []string, logFile *os.File) {
+func tagCheck(arrayOfTags []string, logFile *log.Logger, file *os.File) {
 	var checkInput [][]rune
 	for i := range arrayOfTags {
 		if arrayOfTags[i][0] == 32 {
@@ -44,7 +45,7 @@ func tagCheck(arrayOfTags []string, logFile *os.File) {
 			if unicode.Is(unicode.Cyrillic, checkInput[j][k]) != true && checkInput[j][k] != 32 {
 				var err interface{} = "error"
 				num := 4
-				errorpack.ErrorHandler(logFile, err, num)
+				errorpack.ErrorHandler(logFile, err, num, file)
 			}
 		}
 	}

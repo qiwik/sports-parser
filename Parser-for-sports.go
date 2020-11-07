@@ -12,10 +12,10 @@ const (
 )
 
 func main() {
-	logFile := logger.LogInit()
-	inputTag := newstag.GetTag(logFile)
-	outerfiles.OpenHistory(landURL, inputTag, logFile)
-	logFile.WriteString("File closed correctly.\n--------\n")
-	logFile.Close()
+	loggerFile, file := logger.LogInit()
+	inputTag := newstag.GetTag(loggerFile, file)
+	outerfiles.OpenHistory(landURL, inputTag, loggerFile, file)
+	loggerFile.Println("File closed correctly.")
+	file.Close()
 	fmt.Scanln()
 }
